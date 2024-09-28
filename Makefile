@@ -6,6 +6,30 @@ MONGO_CONTAINER = mongo
 # Targets
 .PHONY: build up down restart logs clean
 
+PYTHON_VENV = python_venv
+
+# Targets
+.PHONY: build up down clean create-venv
+
+# Create Python virtual environment if it doesn't exist
+create-venv:
+	@if [ ! -d $(PYTHON_VENV) ]; then \
+		python3 -m venv $(PYTHON_VENV); \
+		echo "Virtual environment '$(PYTHON_VENV)' created."; \
+	else \
+		echo "Virtual environment '$(PYTHON_VENV)' already exists."; \
+	fi
+
+# Activate the virtual environment
+use-venv:
+	@echo "Activating virtual environment '$(PYTHON_VENV)'..."
+	@source $(PYTHON_VENV)/bin/activate && exec bash
+
+# Stop the virtual environment
+stop-venv:
+	@echo "To deactivate the virtual environment, run:"
+	@echo "  deactivate"
+
 # Build Docker containers
 build:
 	$(DOCKER_COMPOSE) up --build -d
