@@ -1,5 +1,6 @@
 from flask import Flask
 from app.api.auth import init_app as init_auth
+from app.api.tests import init_app as init_tests
 from app.db.mongodb import initialize_db
 import yaml
 
@@ -23,5 +24,6 @@ def create_app():
 
     # Register versioned auth blueprint
     init_auth(app)
+    init_tests(app)
 
     return app
