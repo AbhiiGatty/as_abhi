@@ -2,6 +2,7 @@ flask:
   env: development
   port: 5001
   mongo_uri: mongodb://localhost:27018/
+  jwt_secret_key: "17535c34-c755-4a11-83bf-1d50e1e261a7"
 
 mongo:
   host: localhost
