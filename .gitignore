@@ -1,0 +1,30 @@
+# Python virtual environment
+python_env/
+
+# Byte compiled files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Environment variables
+.env
+*.env
+
+# IDE / editor specific files
+.vscode/
+.idea/
+*.swp

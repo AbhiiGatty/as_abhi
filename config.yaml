@@ -1,0 +1,8 @@
+flask:
+  env: development
+  port: 5001
+  mongo_uri: mongodb://localhost:27018/
+
+mongo:
+  host: localhost
+  port: 27018

@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  flask-app:
+    build: .
+    container_name: flask-app
+    ports:
+      - "5001:5000"
+    environment:
+      - FLASK_ENV=development
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:7.0
+    container_name: mongo
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
